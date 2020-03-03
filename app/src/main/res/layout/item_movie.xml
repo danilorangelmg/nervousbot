@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dimen_300dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:gravity="center">
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_poster"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/ic_launcher_background"-->
+            <!--android:layout_height="match_parent" />-->
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="poster"
+            android:scaleType="fitCenter"
+            android:transitionName="@string/simple_activity_transition" />
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

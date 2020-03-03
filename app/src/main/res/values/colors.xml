@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorBackground">@color/colorWhite</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhiteOpaque">#BFffffff</color>
+
+    <color name="colorBlue">#36a9e1</color>
+    <color name="colorBluePressed">#2f92c2</color>
+    <color name="colorBlueDark">#07519C</color>
+    <color name="colorBlueLight">#86caec</color>
+
+    <color name="colorGreen">#53ce17</color>
+
+    <color name="colorYellow">#ffc314</color>
+    <color name="colorYellowLight">#ffdb02</color>
+    <color name="colorYellowGold">#fcc672</color>
+
+    <color name="colorRedTransparent">#80e30613</color>
+    <color name="colorRed">#e30613</color>
+    <color name="colorRedDark">#CD0D0E</color>
+    <color name="colorBackgroundParallaxCard">#E10E0F</color>
+    <color name="colorDefaultBackground">#fafafa</color>
+
+    <color name="colorGrayLight">#f0f0f0</color>
+    <color name="colorGray">#bcbcbc</color>
+    <color name="colorGrayDark">#9C9C9C</color>
+    <color name="colorGrayDarker">#4D4D4D</color>
+    <color name="colorGrayMedium">#9B9B9B</color>
+    <color name="colorGrayDarkMedium">#3d3d3d</color>
+    <color name="colorGrayMediumOpaque">#ff9B9B9B</color>
+
+    <color name="colorTagBlue">#9ac4d8</color>
+
+    <color name="colorGreenLight">#c0e8ad</color>
+    <color name="colorGreenDark">#205406</color>
+
+    <!-- Selector -->
+    <color name="btn_create">#ffffff</color>
+    <color name="btn_create_disabled">#c1acff</color>
+    <color name="btn_edit">#ffffff</color>
+    <color name="btn_edit_disabled">#c1acff</color>
+    <color name="btn_send">#774df2</color>
+    <color name="btn_send_disabled">#8e8e8e</color>
+</resources>

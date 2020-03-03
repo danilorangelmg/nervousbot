@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Nervous chat</string>
+    <string name="simple_activity_transition">simple_activity_transition</string>
+
+    <string name="label_similar_movies">Filmes parecidos</string>
+    <string name="label_movie_title">%s (%s)</string>
+    <string name="title_list_movies">Filmes</string>
+    <string name="send">Enviar</string>
+    <string name="message">Mensagem</string>
+
+</resources>
