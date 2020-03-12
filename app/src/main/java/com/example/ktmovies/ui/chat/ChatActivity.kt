@@ -1,9 +1,6 @@
 package com.example.ktmovies.ui.chat
 
-import android.app.Activity
 import android.os.Bundle
-import android.view.View
-import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ktmovies.KtMovieApplication
@@ -13,17 +10,18 @@ import com.example.ktmovies.di.component.DaggerChatComponent
 import com.example.ktmovies.di.module.ChatModule
 import com.example.ktmovies.domain.BotMessage
 import com.example.ktmovies.ui.adapter.BotAdapter
+import com.example.ktmovies.ui.view_ext.hideKeyboard
 import kotlinx.android.synthetic.main.activity_chat.*
-import java.util.*
 import javax.inject.Inject
-
 
 class ChatActivity : AppCompatActivity(), ChatContract.View {
 
     @Inject
     lateinit var mPresenter: ChatContract.Presenter
 
-    lateinit var mAdapter: BotAdapter
+    private val mAdapter: BotAdapter by lazy {
+        BotAdapter()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +36,7 @@ class ChatActivity : AppCompatActivity(), ChatContract.View {
     }
 
     override fun setupView() {
-        rvBotList.also {
-            mAdapter = BotAdapter(LinkedList())
-        }.apply {
+        rvBotList.apply {
             this.layoutManager = LinearLayoutManager(this@ChatActivity).apply { stackFromEnd = true }
             this.adapter = mAdapter
         }
@@ -52,7 +48,7 @@ class ChatActivity : AppCompatActivity(), ChatContract.View {
 
     private fun sendMessage() {
         edtMessage.text.toString().let {
-            mAdapter.addMessage(BotMessage(edtMessage.text.toString(), false))
+            mAdapter.addMessage(BotMessage(edtMessage.text.toString()))
             mPresenter.sendAnswer(edtMessage.text.toString())
         }.run {
             rvBotList.scrollToPosition(mAdapter.itemCount - 1)
@@ -65,16 +61,4 @@ class ChatActivity : AppCompatActivity(), ChatContract.View {
         mAdapter.addMessage(BotMessage(answer, true))
         rvBotList.scrollToPosition(mAdapter.itemCount - 1)
     }
-
-    private fun hideKeyboard() {
-        val imm = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        //Find the currently focused view, so we can grab the correct window token from it.
-        var view = this.currentFocus
-        //If no view currently has focus, create a new one, just so we can grab a window token from it
-        if (view == null) {
-            view = View(this)
-        }
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
-    }
-
 }

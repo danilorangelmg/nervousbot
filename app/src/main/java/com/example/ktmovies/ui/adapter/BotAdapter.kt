@@ -13,22 +13,16 @@ import java.util.*
 /**
  * Created by danilorangel on 15/07/18.
  */
-class BotAdapter(private val items: LinkedList<BotMessage>) : RecyclerView.Adapter<BotAdapter.ItemViewHolder>() {
+class BotAdapter(private val items: LinkedList<BotMessage> = LinkedList()) : RecyclerView.Adapter<BotAdapter.ItemViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder =
+            ItemViewHolder(LayoutInflater.from(parent.context).inflate(when (viewType) {
+                0 -> R.layout.item_bot_message
+                1 -> R.layout.item_user_message
+                else -> 0
+            }, parent, false))
 
-        val layoutId = when(viewType) {
-            0 -> R.layout.item_bot_message
-            1 -> R.layout.item_user_message
-            else -> 0
-        }
-
-        return ItemViewHolder(LayoutInflater.from(parent.context).inflate(layoutId, parent, false))
-    }
-
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount(): Int = items.size
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         with(holder.itemView) {
@@ -40,13 +34,7 @@ class BotAdapter(private val items: LinkedList<BotMessage>) : RecyclerView.Adapt
         }
     }
 
-    override fun getItemViewType(position: Int): Int {
-        if (items[position].isBot) {
-            return 0
-        }
-
-        return 1
-    }
+    override fun getItemViewType(position: Int): Int = if (items[position].isBot) 0 else 1
 
     fun addMessage(message: BotMessage) {
         items.add(message)

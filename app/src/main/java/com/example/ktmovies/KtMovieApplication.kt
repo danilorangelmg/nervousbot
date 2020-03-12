@@ -17,6 +17,4 @@ class KtMovieApplication: Application() {
         super.onCreate()
         component = DaggerAppComponent.builder().appModule(AppModule(this)).build()
     }
-
-
 }
