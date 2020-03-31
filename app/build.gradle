@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
     defaultConfig {
-        applicationId "com.example.ktmovies"
+        applicationId "com.app.nervous"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -43,7 +43,7 @@ ext {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.71"
 
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -51,33 +51,35 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation "com.squareup.retrofit2:retrofit:$RetrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$RetrofitVersion"
-    implementation "com.squareup.okhttp3:okhttp:$okHttp3Version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp3Version"
-    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:retrofit:2.8.1"
+    implementation "com.squareup.retrofit2:converter-gson:2.8.1"
+    implementation "com.squareup.okhttp3:okhttp:4.4.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.4.1"
+    implementation "com.google.code.gson:gson:2.8.6"
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
 
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3"
 
     implementation "androidx.lifecycle:lifecycle-runtime:${lifecycle}"
     implementation "androidx.lifecycle:lifecycle-extensions:${lifecycle}"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle}"
     implementation "androidx.lifecycle:lifecycle-common-java8:${lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:${lifecycle}"
 
+    implementation "androidx.core:core-ktx:1.1.0"
 
 
 //    implementation "org.koin:koin-android:$koin_version"
 //    // or Koin for Android Architecture ViewModel
 //    implementation "org.koin:koin-android-viewmodel:$koin_version"
 
-    implementation "com.google.dagger:dagger:$daggerVersion"
+    implementation "com.google.dagger:dagger:2.27"
 
-    kapt "com.google.dagger:dagger-compiler:2.12"
+    kapt 'com.google.dagger:dagger-compiler:2.27'
 
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

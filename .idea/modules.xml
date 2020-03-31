@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="nervousbot/app" />
-      <module fileurl="file://$PROJECT_DIR$/nervousbot.iml" filepath="$PROJECT_DIR$/nervousbot.iml" group="nervousbot" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="nervousbotapp/app" />
+      <module fileurl="file://$PROJECT_DIR$/nervousbotapp.iml" filepath="$PROJECT_DIR$/nervousbotapp.iml" group="nervousbotapp" />
     </modules>
   </component>
 </project>
